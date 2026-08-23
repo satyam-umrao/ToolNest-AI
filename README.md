@@ -48,15 +48,15 @@
 **ToolNest AI** is a client-side document manipulation and computer vision platform engineered by **[Technologies Satyam](https://github.com/Technologies-Satyam)**. Built on top of **Next.js 14 App Router, WebAssembly, HTML5 Canvas 2D/WebGL, and Framer Motion**, ToolNest AI eliminates backend computing costs by delegating compute-heavy operations directly to the client's local CPU and GPU.
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                          100% IN-BROWSER MEMORY SANDBOX                     │
-│                                                                             │
-│   [ Client Device ] ──► [ Local Memory Buffer ] ──► [ Wasm / Canvas / GPU ]  │
-│                                                              ▲              │
-│                                                              │              │
-│   ✖ ZERO Server Uploads      ✖ ZERO Telemetry         ✔ $0 Server Cost      │
-│   ✖ ZERO File Retention      ✖ ZERO API Quotas        ✔ Sub-10ms Latency    │
-└─────────────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                          100% IN-BROWSER MEMORY SANDBOX                       │
+│                                                                               │
+│   [ Client Device ] ──► [ Local Memory Buffer ] ──► [ Wasm / Canvas / GPU ]   │
+│                                                              ▲                │
+│                                                              │                │
+│   ✖ ZERO Server Uploads      ✖ ZERO Telemetry            $0 Server Cost      │
+│   ✖ ZERO File Retention      ✖ ZERO API Quotas           Sub-10ms Latency    │
+└───────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
