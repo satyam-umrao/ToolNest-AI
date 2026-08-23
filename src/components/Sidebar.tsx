@@ -171,7 +171,7 @@ export default function Sidebar() {
           </a>
 
           <a
-            href="https://github.com/Technologies-Satyam/ToolNest-AI"
+            href="https://github.com/satyam-umrao/ToolNest-AI"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-3 text-xs font-bold text-white shadow-md shadow-purple-500/20 hover:opacity-95 active:scale-[0.98] transition-all"
