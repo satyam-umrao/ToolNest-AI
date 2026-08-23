@@ -1,5 +1,5 @@
 {
-  "name": "toolnest-ai-frontend",
+  "name": "toolnest-ai",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,13 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "test:watch": "jest --watch",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@pilio/gemini-watermark-remover": "^1.0.41",
-    "axios": "^1.6.5",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.3",
     "lucide-react": "^0.323.0",
@@ -23,7 +20,6 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-hot-toast": "^2.4.1",
-    "sharp": "^0.33.2",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
