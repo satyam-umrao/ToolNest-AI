@@ -48,25 +48,72 @@
 **ToolNest AI** is a client-side document manipulation and computer vision platform engineered by **[Technologies Satyam](https://github.com/Technologies-Satyam)**. Built on top of **Next.js 14 App Router, WebAssembly, HTML5 Canvas 2D/WebGL, and Framer Motion**, ToolNest AI eliminates backend computing costs by delegating compute-heavy operations directly to the client's local CPU and GPU.
 
 ```mermaid
-graph TD
-    subgraph Browser ["User Browser Runtime"]
-        UI["Client Device / User Interface"]
+%%{init: {
+  'theme': 'dark',
+  'themeVariables': {
+    'fontFamily': 'inter, system-ui, -apple-system, sans-serif',
+    'fontSize': '16px',
+    'background': '#0B0F17',
+    'primaryColor': '#1E2640',
+    'primaryTextColor': '#F8FAFC',
+    'primaryBorderColor': '#38BDF8',
+    'lineColor': '#818CF8',
+    'subGraphTitleColor': '#38BDF8',
+    'tertiaryColor': '#0F172A'
+  }
+}}%%
 
-        subgraph Sandbox ["100% In-Browser Memory Sandbox"]
-            MEM_BUF["Local Memory Buffer"]
-            WASM_GPU["Wasm / Canvas / GPU Engine"]
+graph TD
+    classDef clientStyle fill:#1E293B,stroke:#38BDF8,stroke-width:2px,color:#F8FAFC,rx:12px;
+    classDef bufferStyle fill:#312E81,stroke:#818CF8,stroke-width:2px,color:#FFFFFF,rx:12px;
+    classDef engineStyle fill:#4C1D95,stroke:#A78BFA,stroke-width:2px,color:#FFFFFF,rx:12px;
+    
+    classDef badgeRed fill:#451A03,stroke:#F97316,stroke-width:1.5px,color:#FFEDD5,rx:8px;
+    classDef badgeBlue fill:#0C4A6E,stroke:#38BDF8,stroke-width:1.5px,color:#E0F2FE,rx:8px;
+    classDef badgeGreen fill:#064E3B,stroke:#34D399,stroke-width:1.5px,color:#ECFDF5,rx:8px;
+
+    subgraph MemorySandbox ["<b>🔒 100% IN-BROWSER MEMORY SANDBOX</b>"]
+        style MemorySandbox fill:#0F172A,stroke:#38BDF8,stroke-width:3px,rx:16px
+
+        %% Main Processing Pipeline
+        subgraph Pipeline ["<b>CORE DATA PIPELINE</b>"]
+            style Pipeline fill:#1E293B,stroke:#475569,stroke-width:1.5px,rx:12px
+            direction LR
+            CLIENT["<div style='padding:18px 24px;text-align:center;'><b>💻 Client Device</b><br/><span style='font-size:13px;color:#94A3B8;'>User Runtime Environment</span></div>"]:::clientStyle
+            BUFFER["<div style='padding:18px 24px;text-align:center;'><b>⚡ Local Memory Buffer</b><br/><span style='font-size:13px;color:#C7D2FE;'>Zero Network Exfiltration</span></div>"]:::bufferStyle
+            ENGINE["<div style='padding:18px 24px;text-align:center;'><b>⚙️ Wasm / Canvas / GPU</b><br/><span style='font-size:13px;color:#DDD6FE;'>Hardware Accelerated</span></div>"]:::engineStyle
+
+            CLIENT ==>|<b style='font-size:14px;color:#38BDF8;'>Stream Input</b>| BUFFER
+            BUFFER ==>|<b style='font-size:14px;color:#818CF8;'>Zero-Copy Transit</b>| ENGINE
+        end
+
+        %% Value Props Matrix
+        subgraph Guarantees ["<b>GUARANTEES & PERFORMANCE SPECIFICATIONS</b>"]
+            style Guarantees fill:#1E293B,stroke:#475569,stroke-width:1.5px,rx:12px
+            direction LR
             
-            subgraph Features ["Guarantees & Performance"]
-                SEC["✖ ZERO Server Uploads<br/>✖ ZERO File Retention"]
-                TEL["✖ ZERO Telemetry<br/>✖ ZERO API Quotas"]
-                PERF["✔ $0 Server Cost<br/>✔ Sub-10ms Latency"]
+            subgraph Security ["<br/><b>Data Privacy</b>"]
+                style Security fill:#0F172A,stroke:#334155,rx:8px
+                SEC["<div style='padding:12px 8px;text-align:left;'><b>✖ ZERO Server Uploads</b><br/><b>✖ ZERO File Retention</b></div>"]:::badgeRed
+            end
+
+            subgraph Policy ["<br/><b>Telemetry & Limits</b>"]
+                style Policy fill:#0F172A,stroke:#334155,rx:8px
+                TEL["<div style='padding:12px 18px;text-align:left;'><b>✖ ZERO Telemetry</b><br/><b>✖ ZERO API Quotas</b></div>"]:::badgeBlue
+            end
+
+            subgraph Metrics ["<br/><b>Execution Costt</b>"]
+                style Metrics fill:#0F172A,stroke:#334155,rx:8px
+                PERF["<div style='padding:12px 18px;text-align:left;'><b>⚡ $0 Server Cost</b><br/><b>⚡ Sub-10ms Latency</b></div>"]:::badgeGreen
             end
         end
 
-        UI -->|Input Data| MEM_BUF
-        MEM_BUF --> WASM_GPU
-        WASM_GPU --> Features
+        ENGINE --- Guarantees
     end
+
+    linkStyle 0 stroke:#38BDF8,stroke-width:3px;
+    linkStyle 1 stroke:#818CF8,stroke-width:3px;
+    linkStyle 2 stroke:#A78BFA,stroke-width:3px,stroke-dasharray: 5 5;
 ```
 
 ---
