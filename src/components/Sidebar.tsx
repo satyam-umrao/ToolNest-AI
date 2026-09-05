@@ -153,7 +153,7 @@ export default function Sidebar() {
             Organization
           </p>
           <h3 className="text-sm font-bold text-white mt-0.5">
-            Technologies Satyam
+            Tech Satyam
           </h3>
         </div>
 
